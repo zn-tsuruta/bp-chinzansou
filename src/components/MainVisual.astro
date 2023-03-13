@@ -24,7 +24,7 @@ const { rutePath } = Astro.props;
 @use '../styles/variables.scss' as v;
 
 .main-visual{
-    background-image: url('/img/main-visual-bg.jpg');
+    background-image: url(  v.$rutePath + '/img/main-visual-bg.jpg');
     background-size: cover;
     min-height: 100vh;
     font-family: v.$mincho;
