@@ -12,20 +12,23 @@ import Voice from '../components/Voice.astro'
 
 import '../styles/reset.scss';
 import '../styles/common.scss';
+
+const rutePath = '/chinzansou';
+
 ---
 
 <Layout title="椿山荘">
 	<header></header>
 
 	<main>
-		<MainVisual rutePath='/chinzansou'/>
-		<Hospitality  rutePath='/chinzansou' />
-		<Conversion01  rutePath='/chinzansou' />
-		<BridalFair  rutePath='/chinzansou' />
-		<Conversion02  rutePath='/chinzansou' />
-		<Ceremony  rutePath='/chinzansou' />
-		<Conversion03  rutePath='/chinzansou' />
-		<Voice  rutePath='/chinzansou' />
+		<MainVisual rutePath={rutePath}/>
+		<Hospitality  rutePath={rutePath} />
+		<Conversion01  rutePath={rutePath} />
+		<BridalFair  rutePath={rutePath} />
+		<Conversion02  rutePath={rutePath} />
+		<Ceremony  rutePath={rutePath} />
+		<Conversion03  rutePath={rutePath} />
+		<Voice  rutePath={rutePath} />
 	</main>
 	<footer>
 		<script src="https://kit.fontawesome.com/6d24b21b1e.js"></script>
