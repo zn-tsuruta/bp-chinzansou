@@ -1,3 +1,6 @@
+---
+const { rutePath } = Astro.props;
+---
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">HOSPITALITY</span>
@@ -208,7 +211,8 @@
         padding-right: 100px;
     }
     &__heading-text{
-        font-size: 24px;
+        font-weight: bold;
+        font-size: 26px;
     }
 
     &__text{
@@ -216,6 +220,7 @@
         margin-bottom: 40px;
         font-size: 15px;
         padding-right: 20px;
+        min-height: 150px;
         &--second,
         &--fourth{
             margin-left: auto;
@@ -227,20 +232,22 @@
 
 .images{
     display: grid;
-    grid-template-columns: 32% 32% 32%;
+    grid-template-columns: 31% 31% 31%;
     grid-template-rows: auto auto;
-    gap: 40px 1%;
-
+    gap: 40px ;
+    justify-content: space-between;
     &--second{
         grid-template-columns: 24% 24% 24% 24%;
     }
     
-    &__item{
-        //width: 32%;
+    &__img{
+        margin-bottom: 4px;
     }
 
     &__text{
         text-align: center;
+        font-size: 13px;
+        font-weight: bold;
     }
 }
 

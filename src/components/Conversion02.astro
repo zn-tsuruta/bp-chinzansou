@@ -1,3 +1,7 @@
+---
+const { rutePath } = Astro.props;
+---
+
 <div class="wrapper">
 
     <div class="inner">
@@ -53,7 +57,7 @@
 }
 
 .text{
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
     margin-bottom: 80px;
     p{
@@ -83,21 +87,23 @@
     &__above{
         background-color: #fff;
         display: block;
-        width: fit-content;
+        width: 280px;
         margin: 0 auto;
-        padding: 6px 12px;
+        padding: 4px 12px;
         border-radius: 3em;
         margin-bottom: 10px;
         font-size: 14px;
+        font-weight: bold;
     }
 
     &__text{
         color: #fff;
-        font-size: 20px;
+        font-size: 18px;
+        font-weight: bold;
     }
     &__em{
         color: #fff;
-        font-size: 26px;
+        font-size: 32px;
     }
 }
 

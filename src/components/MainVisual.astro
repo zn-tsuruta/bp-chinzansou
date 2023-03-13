@@ -1,3 +1,6 @@
+---
+const { rutePath } = Astro.props;
+---
 
 <div class="main-visual">
     
@@ -33,7 +36,7 @@
             position: absolute;
             content: "";
             background-color: rgba(#fff,.6);
-            width: calc( ( 100vw - v.$main_width ) / 2 );
+            width: calc( ( 100vw - v.$main_width - ( 100vw - 100% ) ) / 2 );
             height: 100%;
             display: block;
         }

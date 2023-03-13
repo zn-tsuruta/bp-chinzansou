@@ -1,5 +1,6 @@
 ---
 import Cuisine from '../components/Cuisine.astro'
+const { rutePath } = Astro.props;
 ---
 
 <div class="wrapper">
@@ -32,7 +33,7 @@ import Cuisine from '../components/Cuisine.astro'
             <div class="ratio__grid">
 
                 <div class="ratio__graph">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-graph.png" alt="">
                 </div>
 
                 <div class="ratio__text">
@@ -40,12 +41,12 @@ import Cuisine from '../components/Cuisine.astro'
                 </div>
 
                 <div class="ratio__images">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
-                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-01.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-02.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-03.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-04.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-05.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/bridalfair-06.jpg" alt="">
                 </div>
 
 
@@ -69,10 +70,10 @@ import Cuisine from '../components/Cuisine.astro'
             </p>
         </div>
         <div class="conclusion__images">
-            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
-            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
-            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
-            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/bridalfair-07.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/bridalfair-08.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/bridalfair-09.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/bridalfair-10.jpg" alt="">
         </div>  
     </div>
 
@@ -100,7 +101,7 @@ import Cuisine from '../components/Cuisine.astro'
 .ratio{
     background-image: url('/img/bridalfair-bg.jpg');
     background-size: cover;
-    
+    background-position: center;
     &__inner{
         background-color: #fff;
         width: v.$main_width;
@@ -132,14 +133,14 @@ import Cuisine from '../components/Cuisine.astro'
         grid-template: 
         "g t" auto
         "g i" auto / 
-        50% 50%;
+        40% 60%;
     }
 
     &__graph{
         grid-area: g;
-        background-color: red;
         padding: 10px;
-
+        width: 80%;
+        margin: 0 auto;
     }
     &__text{
         grid-area: t;
@@ -178,18 +179,18 @@ import Cuisine from '../components/Cuisine.astro'
     &__text{
         text-align: center;
         width: v.$main_width;
-        margin: 0 auto 40px;
+        margin: 0 auto 80px;
         justify-content: center;
         padding-left: 200px;
         padding-right: 200px;
         position: relative;
         &::before{
             content: "";
-            width: 100px;
+            width: 50px;
             height: 2px;
             background-color: v.$gold;
             position: absolute;
-            top: -20px;
+            top: -50px;
         }
     }
 

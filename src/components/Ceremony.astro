@@ -1,3 +1,7 @@
+---
+const { rutePath } = Astro.props;
+---
+
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">Ceremony</span>
@@ -26,17 +30,17 @@
             </div>
             <div class="images">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src={ rutePath + "/img/ceremony01-01.jpg"} alt="">
                     <p class="images__text">開放感があり、日差しが美しく照らします
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src={ rutePath + "/img/ceremony01-02.jpg"} alt="">
                     <p class="images__text">緑の前で爽やかに愛を誓い合えるでしょう
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src={ rutePath + "/img/ceremony01-03.jpg"} alt="">
                     <p class="images__text">祝福してくれる参列者のお顔までよく見えます
                     </p>
                 </div>
@@ -61,17 +65,17 @@
             </div>
             <div class="images images--second">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony02-01.jpg" alt="">
                     <p class="images__text">落ち着いた雰囲気がお好みならヴァンヴェール
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony02-02.jpg" alt="">
                     <p class="images__text">教会以外もシックな雰囲気で彩られています
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony02-03.jpg" alt="">
                     <p class="images__text">独立したチャペルで演出されるプライベート感
                     </p>
                 </div>
@@ -96,17 +100,17 @@
             </div>
             <div class="images ">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony03-01.jpg" alt="">
                     <p class="images__text">まるで天空にいるかのようなチャペル
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony03-02.jpg" alt="">
                     <p class="images__text">木目調で自然豊かなイメージです
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony03-03.jpg" alt="">
                     <p class="images__text">少人数でご検討の方々に人気です
                     </p>
                 </div>
@@ -137,17 +141,17 @@
             </div>
             <div class="images ">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony04-01.jpg" alt="">
                     <p class="images__text">神社のような雅楽三管と巫女の舞
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony04-02.jpg" alt="">
                     <p class="images__text">ホテル椿山荘東京ならではの緑の中にあります
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony04-03.jpg" alt="">
                     <p class="images__text">厳かな演出で行う三々九度も格調高い雰囲気に
                     </p>
                 </div>
@@ -172,17 +176,17 @@
             </div>
             <div class="images ">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony05-01.jpg" alt="">
                     <p class="images__text">古き良き時代の晴れ姿は、花嫁の永遠の憧れ
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony05-02.jpg" alt="">
                     <p class="images__text">神殿へと続く参道には鳥居と太鼓橋
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony05-03.jpg" alt="">
                     <p class="images__text">感動的な演出が盛りだくさん
                     </p>
                 </div>
@@ -208,17 +212,17 @@
             </div>
             <div class="images ">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony06-01.jpg" alt="">
                     <p class="images__text">荘厳な雅楽が響きます
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony06-02.jpg" alt="">
                     <p class="images__text">お祀りするのは縁結びの出雲大社
                     </p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony06-03.jpg" alt="">
                     <p class="images__text">厳粛に誓詞を奏上
                     </p>
                 </div>
@@ -239,13 +243,13 @@
             </div>
             <div class="images ">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony07-01.jpg" alt="">
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony07-02.jpg" alt="">
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony07-03.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -267,13 +271,13 @@
             </div>
             <div class="images ">
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony08-01.jpg" alt="">
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony08-02.jpg" alt="">
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="images__img" src="/img/ceremony08-03.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -313,7 +317,7 @@
         left: 100px;
         font-size: 80px;
         z-index: -1;
-        color: v.$cream;        
+        color: #F2F2F2;        
     }
 }
 
@@ -325,55 +329,55 @@
     background-size: 45vw auto,cover;
     &--first{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony01-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: right top, center;
     }
     &--second{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony02-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
     }
 
     &--third{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony03-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: right top, center;
     }
 
     &--fourth{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony04-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
     }
 
     &--fifth{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony05-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: right top, center;
     }
 
     &--sixth{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony06-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
     }
 
     &--seventh{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony07-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: right top, center;
     }
 
     &--eighth{
         background-image: 
-            url('/img/main-visual-bg.jpg'),    
+            url('/img/ceremony08-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
     }
@@ -414,10 +418,10 @@
 
     &__text{
         width: 55%;
-        margin-bottom: 40px;
+        margin-bottom: 80px;
         font-size: 15px;
         padding-right: 20px;
-        min-height: 100px;
+
         &--second,
         &--fourth,
         &--sixth,
@@ -426,25 +430,34 @@
             padding-left: 20px;
             padding-right: 0;
         }
+
+        &--seventh,
+        &--eighth{
+            margin-bottom: 250px;
+        }
+
     }
 }
 
 .images{
     display: grid;
-    grid-template-columns: 32% 32% 32%;
+    grid-template-columns: 31% 31% 31%;
     grid-template-rows: auto auto;
-    gap: 40px 1%;
+    gap: 40px ;
+    justify-content: space-between;
 
     &--second{
        // grid-template-columns: 24% 24% 24% 24%;
     }
     
-    &__item{
-        //width: 32%;
+    &__img{
+        margin-bottom: 4px;
     }
 
     &__text{
         text-align: center;
+        font-size: 13px;
+        font-weight: bold;
     }
 }
 
