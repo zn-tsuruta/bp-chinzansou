@@ -1,0 +1,92 @@
+
+<div class="main-visual">
+    
+    <div class="main-visual__phrase ">
+        <div class="main-visual__heading">
+            <h1 class="main-visual__heading-text">いつまでも語り継ぐ特別な結婚式だからこそ、<br>上質な思い出作りを</h1>
+        </div>
+    </div>
+
+    <div class="main-visual__btns">
+        <div class="main-visual__btn">
+            <a class="main-visual__btn-link main-visual__btn-link--green" href="http://hotel-chinzanso-tokyo.fuwel.wedding/fair">現在開催予定の<br><span class="em">ブライダルフェア</span>はこちら</a>
+        </div>
+        <div class="main-visual__btn">
+            <a class="main-visual__btn-link main-visual__btn-link--gold" href="https://hotel-chinzanso-tokyo.fuwel.wedding/contact#contact-type-request">ＷＥＢパンフレットの<br><span class="em">資料請求</span>はこちら</a>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+@use '../styles/variables.scss' as v;
+
+.main-visual{
+    background-image: url('/img/main-visual-bg.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    font-family: v.$mincho;
+    padding-top: 10vh;
+    &__phrase{
+        max-width: 100%;
+        position: relative;
+        &::before{
+            position: absolute;
+            content: "";
+            background-color: rgba(#fff,.6);
+            width: calc( ( 100vw - v.$main_width ) / 2 );
+            height: 100%;
+            display: block;
+        }
+    }
+    &__heading{
+        width: v.$main_width;
+        margin: 0 auto 0;
+    }
+    &__heading-text{
+        padding: 20px;
+        background-color: rgba(#fff,.6);
+        width: fit-content;
+    }
+
+    &__btns{
+        background-color: rgba(#fff,.6);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__btn{
+        width: 400px;
+        border: 1px solid #fff;
+        text-align: center;
+        box-shadow: 1px 1px 2px #fff;
+    }
+
+    &__btn-link{
+        padding: 10px 40px;
+        display: block;
+        color: #fff;
+        .em{
+            display: inline-block;
+            font-size: 32px;
+        }
+        &--green{
+            background-color: v.$green;
+        }
+        &--gold{
+            background-color: v.$gold;
+        }
+
+        &:hover{
+            opacity: .8;
+        }
+
+    }
+
+}
+</style>

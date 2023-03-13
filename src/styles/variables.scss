@@ -1,0 +1,51 @@
+/* ぶレイクポイント
+================================================================================================= */
+
+// ブレイクポイントのキーを設定
+$breakpoints: (
+	'xxl': 'screen and (max-width: 1460px)',
+	'xl': 'screen and (max-width: 1280px)',
+	'lg': 'screen and (max-width: 1024px)',
+	'md': 'screen and (max-width: 768px)',
+	'sm': 'screen and (max-width: 640px)',
+	'xs': 'screen and (max-width: 425px)',
+	'xxs': 'screen and (max-width: 320px)',
+	) !default;
+
+// ブレイクポイントのmixin
+@mixin mq($bp) {
+	@media #{map-get($breakpoints, $bp)} {
+		@content;
+	}
+}
+
+
+/* color
+================================================================================================= */
+
+
+$green : #008345;
+$gold : #9f8d55;
+$cream : #fbfaf5;
+//$cream : gold;
+
+/* font
+================================================================================================= */
+
+$mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+$main_width : 1280px;
+
+
+/* heading
+================================================================================================= */
+
+@mixin common_heading() {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 24px;
+    &__en{
+        color: $gold;
+        font-size: 16px;
+    }
+}

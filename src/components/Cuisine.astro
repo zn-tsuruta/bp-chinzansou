@@ -1,0 +1,77 @@
+<div class="wrapper">
+    <div class="heading">
+        <span class="heading__en">CUISINE</span>
+        <h2 class="heading__jp">新しい潮流を生み出す THE TOKYO CUISINE</h2>
+    </div>
+
+    <div class="lead">
+        <p>ありとあらゆる文化を受け入れながら独自の進化を遂げてきた東京の街のように、<br>THE TOKYO CUISINEは、日本料理やフランス料理といった垣根をこえて新しい潮流を生み出しています。</p>
+    </div>
+
+    <div class="message">
+        <div class="message__inner">
+            <div class="message__text">
+                <p>『選りすぐりの海と山の幸とともに旬の味わいを存分に愉しめる贅沢なコースは、お祝いの席にふさわしく、豪華な食材をふんだんに盛り込んだメニューとなっています。ホテル椿山荘東京を代表する伝統と革新の料理をご堪能ください。</p>
+                <p>お約束させていただくことは、「香り・味わい・色合い・触感・温度に至るまで、互換すべてで味わっていただくお料理をお届けすること。そのためには、手に触れるお皿の温かさやテーブルのしつらえまでこだわり抜き、お客様がお皿を目にしたとき、触れたとき、召し上がった時、全ての瞬間の満足をご用意させていただきます。』</p>
+                <p>ホテル椿山荘 バンケット料理長 十代 雅之</p>
+            </div>
+
+            <div class="message__image">
+                <img src="/img/cuisine.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<style lang="scss">
+@use '../styles/variables.scss' as v;
+
+.wrapper{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-family: v.$mincho;
+}
+.heading{
+    @include v.common_heading;
+}
+
+.lead{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.message{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        background-color: v.$cream;
+        width: calc( ( 100% - v.$main_width + 400px ) / 2);
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+    &__inner{
+        display: flex;
+        width: v.$main_width;
+        margin: 0 auto;
+        justify-content: center;
+        padding-left: 200px;
+        padding-right: 200px;
+        gap: 5%;
+    }
+    &__text{
+        padding-top: 20px;
+        width: 70%;
+        p{
+            margin-bottom: 2em;
+        }
+    }
+    &__image{
+        width: 25%;
+    }
+}
+
+</style>

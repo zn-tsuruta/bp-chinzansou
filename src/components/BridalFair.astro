@@ -1,0 +1,209 @@
+---
+import Cuisine from '../components/Cuisine.astro'
+---
+
+<div class="wrapper">
+    <div class="heading">
+        <span class="heading__en">BRIDAL FAIR</span>
+        <h2 class="heading__jp">挙式が決まったらまずはブライダルフェアに参加してみましょう</h2>
+    </div>
+
+    <div class="lead">
+        <p>ブライダルフェアなら、結婚式場見学だけではなく実際に婚礼料理の試食やウエディングドレスの試着、<br>模擬挙式、披露宴なども体験できます。デート感覚でぜひご利用ください。</p>
+    </div>
+
+    <div class="ratio">
+
+        <div class="ratio__inner">
+
+            <div class="ratio__heading">
+                <h2>カップルの９割以上が試食会に参加しています</h2>
+            </div>
+
+            <div class="ratio__lead">
+                <p><a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">「ＺＥＸＹ(ゼクシィ)」の調査</a>によれば、試食会付きのブライダルフェアに参加したカップルの割合は実に９割以上です。<br>雰囲気に慣れたいと思っていたり、どこで挙式しようか迷っていたりするならフェアのご利用をオススメします。</p>
+            </div> 
+
+            <div class="ratio__heading2">
+                <h3>みんなどのくらい試食会に参加してる？</h3>
+                <p>(参考 : <a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">https://zexy.net/wedding/bridalfair/tasting/</a>)</p>
+            </div>
+
+            <div class="ratio__grid">
+
+                <div class="ratio__graph">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                </div>
+
+                <div class="ratio__text">
+                    <p>ゼクシィの調査によれば、先輩花嫁206人に「試食会付きのブライダルフェアに参加しましたか？」と聞いたところ、93.7％の人がYesと回答。ほとんどの人が会場を決める前に試食を体験しているようです。会場を決めるには雰囲気やイメージだけでなく、料理内容やその味を確かめることが重要だと、多くの花嫁の方々が考えるようです。</p>
+                </div>
+
+                <div class="ratio__images">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                    <img class="ratio__images-img" src="/img/main-visual-bg.jpg" alt="">
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <Cuisine/>
+
+    <div class="conclusion">
+        <div class="conclusion__text">
+        <p>ブライダルフェアでは会場の確認もとても重要です。
+            ホームページやSNSなどでも会場の確認はできますが、実際の会場をご自身の目でご覧になることを
+            おすすめします。会場の雰囲気や料理など、五感で感じながらお試しください。
+            収容人数や天井の高さ、生演奏の有無、種類など、チェックしておきたいポイントは山ほど。
+            他にも化粧室までの距離が遠くないか、実際にゲストの席に座ってみて、
+            座り心地や隣の人との間隔などもお確かめください。
+            </p>
+        </div>
+        <div class="conclusion__images">
+            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
+            <img class="conclusion__images-img" src="/img/main-visual-bg.jpg" alt="">
+        </div>  
+    </div>
+
+
+</div>
+
+<style lang="scss">
+@use '../styles/variables.scss' as v;
+
+.wrapper{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-family: v.$mincho;
+}
+.heading{
+    @include v.common_heading;
+}
+
+.lead{
+    text-align: center;
+    margin-bottom: 100px;
+
+}
+
+.ratio{
+    background-image: url('/img/bridalfair-bg.jpg');
+    background-size: cover;
+    
+    &__inner{
+        background-color: #fff;
+        width: v.$main_width;
+        margin: 0 auto;
+        padding: 0 30px 30px;
+    }
+
+    &__heading{
+        background-color: v.$gold;
+        color: #fff;
+        width: fit-content;
+        padding: 10px 100px;
+        border-radius: 3em;
+        margin: 0 auto 50px;
+    }
+
+    &__lead{
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    &__heading2{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__grid{
+        display: grid;
+        grid-template: 
+        "g t" auto
+        "g i" auto / 
+        50% 50%;
+    }
+
+    &__graph{
+        grid-area: g;
+        background-color: red;
+        padding: 10px;
+
+    }
+    &__text{
+        grid-area: t;
+        margin-bottom: 2em;
+    }
+    &__images{
+        
+        grid-area: i;
+        display: grid;
+        grid-template-columns: 32% 32% 32%;
+        grid-template-rows: auto auto;
+        gap: 10px 2%;
+    }
+    &__images-img{
+
+    }
+
+}
+
+.conclusion{
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &::before{
+        content: "";
+        width: 60vw;
+        height: 300px;
+        background-color: v.$cream;
+        display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__text{
+        text-align: center;
+        width: v.$main_width;
+        margin: 0 auto 40px;
+        justify-content: center;
+        padding-left: 200px;
+        padding-right: 200px;
+        position: relative;
+        &::before{
+            content: "";
+            width: 100px;
+            height: 2px;
+            background-color: v.$gold;
+            position: absolute;
+            top: -20px;
+        }
+    }
+
+    &__images{
+        display: flex;
+        width: v.$main_width;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    &__images-img{
+        width: 24%;
+    }
+}
+
+
+</style>
