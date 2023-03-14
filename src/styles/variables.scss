@@ -1,16 +1,13 @@
 /* ぶレイクポイント
 ================================================================================================= */
 
-// ブレイクポイントのキーを設定
 $breakpoints: (
-	'xxl': 'screen and (max-width: 1460px)',
-	'xl': 'screen and (max-width: 1280px)',
+	'xl': 'screen and (max-width: 1440px)',
 	'lg': 'screen and (max-width: 1024px)',
 	'md': 'screen and (max-width: 768px)',
 	'sm': 'screen and (max-width: 640px)',
 	'xs': 'screen and (max-width: 425px)',
-	'xxs': 'screen and (max-width: 320px)',
-	) !default;
+) !default;
 
 // ブレイクポイントのmixin
 @mixin mq($bp) {
@@ -34,7 +31,7 @@ $cream : #fbfaf5;
 
 $mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
 
-$main_width : 1280px;
+
 
 
 /* heading
@@ -52,3 +49,18 @@ $main_width : 1280px;
 
 
 $rutePath : '/chinzansou';
+
+/* width
+================================================================================================= */
+$main_width : 1280px;
+
+@mixin main_width() {
+	width: $main_width;
+	margin: 0 auto;
+	max-width: 100%;
+
+	@include mq(lg) {
+		width: 96%;
+	}
+
+}

@@ -1,4 +1,5 @@
 ---
+import { Image, Picture } from '@astrojs/image/components';
 const { rutePath } = Astro.props;
 ---
 <div class="wrapper">
@@ -18,11 +19,12 @@ const { rutePath } = Astro.props;
             </div>
             <div class="images">
                 <div class="images__item">
-                    <img class="images__img" src={ rutePath + "/img/hospitality01-01.jpg" } alt="">
+                    <Picture src={ rutePath + "/img/hospitality01-01.jpg" } widths={[400,600]} aspectRatio="16:9" sizes="(max-width: 640px) 100vw, 640px" alt="The Google logo" formats={['jpg','webp']}/>
                     <p class="images__text">挙式後に庭園で過ごすチャペルウエディング</p>
                 </div>
                 <div class="images__item">
-                    <img class="images__img" src={ rutePath + "/img/hospitality01-02.jpg" } alt="">
+                    <!-- <img class="images__img" src={ rutePath + "/img/hospitality01-02.jpg" } alt=""> -->
+                    <Picture src={ rutePath + "/img/hospitality01-02.jpg" } widths={[400,600]} aspectRatio="16:9" sizes="(max-width: 640px) 100vw, 640px" alt="The Google logo" formats={['jpg','webp']}/>
                     <p class="images__text">緑が目の前に広がる石焼会席</p>
                 </div>
                 <div class="images__item">
@@ -146,6 +148,7 @@ const { rutePath } = Astro.props;
     padding-top: 100px;
     padding-bottom: 100px;
     font-family: v.$mincho;
+    max-width: 100%;
 }
 .heading{
     @include v.common_heading;
@@ -186,8 +189,7 @@ const { rutePath } = Astro.props;
 
 
     &__inner{
-        width: v.$main_width;
-        margin: 0 auto 0;
+        @include v.main_width;
     }
     &__heading{
         margin-bottom: 20px;
@@ -232,12 +234,12 @@ const { rutePath } = Astro.props;
 
 .images{
     display: grid;
-    grid-template-columns: 31% 31% 31%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto auto;
     gap: 40px ;
     justify-content: space-between;
     &--second{
-        grid-template-columns: 24% 24% 24% 24%;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     
     &__img{

@@ -35,6 +35,7 @@ const { rutePath } = Astro.props;
     padding-top: 100px;
     padding-bottom: 100px;
     font-family: v.$mincho;
+    max-width: 100%;
 }
 .heading{
     @include v.common_heading;
@@ -52,14 +53,14 @@ const { rutePath } = Astro.props;
         position: absolute;
         background-color: v.$cream;
         width: calc( ( 100% - v.$main_width + 400px ) / 2);
+        
         height: 100%;
         right: 0;
         top: 0;
     }
     &__inner{
         display: flex;
-        width: v.$main_width;
-        margin: 0 auto;
+        @include v.main_width;
         justify-content: center;
         padding-left: 200px;
         padding-right: 200px;

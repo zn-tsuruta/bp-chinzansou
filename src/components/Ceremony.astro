@@ -304,8 +304,8 @@ const { rutePath } = Astro.props;
 }
 
 .ceremony-heading{
-    width: v.$main_width;
-    margin: 0 auto 40px;
+    @include v.main_width;
+    margin-bottom: 40px;
     font-size: 32px;
     padding: 20px 0;
     position: relative;
@@ -384,8 +384,7 @@ const { rutePath } = Astro.props;
 
 
     &__inner{
-        width: v.$main_width;
-        margin: 0 auto 0;
+        @include v.main_width;
     }
     &__heading{
         margin-bottom: 20px;
@@ -441,7 +440,8 @@ const { rutePath } = Astro.props;
 
 .images{
     display: grid;
-    grid-template-columns: 31% 31% 31%;
+    //grid-template-columns: 31% 31% 31%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto auto;
     gap: 40px ;
     justify-content: space-between;

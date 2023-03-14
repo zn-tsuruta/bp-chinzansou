@@ -35,11 +35,11 @@ const { rutePath } = Astro.props;
     min-height: 100vh;
     font-family: v.$mincho;
     position: relative;
+    max-width: 100%;
 }
 
 .inner{
-    width: v.$main_width;
-    margin: 0 auto;
+    @include v.main_width;
     background-color: rgba(#fff,.8);
     padding: 64px 100px;
     position: absolute;
@@ -88,6 +88,8 @@ const { rutePath } = Astro.props;
         background-color: #fff;
         display: block;
         width: 280px;
+        max-width: 100%;;
+
         margin: 0 auto;
         padding: 4px 12px;
         border-radius: 3em;

@@ -160,8 +160,8 @@ const { rutePath } = Astro.props;
 }
 
 .voice{
-    width: v.$main_width;
-    margin: 0 auto 100px;
+    @include v.main_width;
+    margin-bottom: 100px;
     &__box{
         border-bottom: 1px solid v.$gold;
         padding-top: 50px;
