@@ -44,11 +44,17 @@ const { rutePath } = Astro.props;
     }
     &__heading{
         @include v.main_width;
+        @include v.mq(lg){
+            width: 100%;        
+        }
     }
     &__heading-text{
         padding: 20px;
         background-color: rgba(#fff,.6);
         width: fit-content;
+        @include v.mq(lg){
+            font-size: max(28px, v.px2vw(32,1024));
+        }
     }
 
     &__btns{
@@ -68,15 +74,24 @@ const { rutePath } = Astro.props;
         border: 1px solid #fff;
         text-align: center;
         box-shadow: 1px 1px 2px #fff;
+        @include v.mq(lg){
+            width: max(360px,v.px2vw(400,1024));
+        }
     }
 
     &__btn-link{
         padding: 10px 40px;
         display: block;
         color: #fff;
+        @include v.mq(lg){
+            font-size: max(15px, v.px2vw(16,1024));
+        }
         .em{
             display: inline-block;
             font-size: 32px;
+            @include v.mq(lg){
+                font-size: max(28px, v.px2vw(32,1024));
+            }
         }
         &--green{
             background-color: v.$green;

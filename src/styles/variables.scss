@@ -2,7 +2,7 @@
 ================================================================================================= */
 
 $breakpoints: (
-	'xl': 'screen and (max-width: 1440px)',
+	'xl': 'screen and (max-width: 1280px)',
 	'lg': 'screen and (max-width: 1024px)',
 	'md': 'screen and (max-width: 768px)',
 	'sm': 'screen and (max-width: 640px)',
@@ -43,8 +43,11 @@ $mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "M
     font-size: 24px;
     &__en{
         color: $gold;
-        font-size: 16px;
+        font-size: 20px;
     }
+	&__jp{
+		font-size: 32px;
+	}
 }
 
 
@@ -57,10 +60,17 @@ $main_width : 1280px;
 @mixin main_width() {
 	width: $main_width;
 	margin: 0 auto;
-	max-width: 100%;
-
-	@include mq(lg) {
+	max-width: 96%;
+	@include mq(xl) {
 		width: 96%;
 	}
+}
+
+/* 
+================================================================================================= */
+
+@function px2vw( $px , $width ) {
+	
+	@return calc( ( 1 / ($width / $px) ) * 100vw ) ;
 
 }

@@ -19,12 +19,13 @@ const { rutePath } = Astro.props;
             </div>
             <div class="images">
                 <div class="images__item">
-                    <Picture src={ rutePath + "/img/hospitality01-01.jpg" } widths={[400,600]} aspectRatio="16:9" sizes="(max-width: 640px) 100vw, 640px" alt="The Google logo" formats={['jpg','webp']}/>
+                    <img class="images__img" src={ rutePath + "/img/hospitality01-01.jpg" } alt="">
+                    <!-- <Picture src={ rutePath + "/img/hospitality01-01.jpg" } widths={[400,600]} aspectRatio="16:9" sizes="(max-width: 640px) 100vw, 640px" alt="The Google logo" formats={['jpg','webp']}/> -->
                     <p class="images__text">挙式後に庭園で過ごすチャペルウエディング</p>
                 </div>
                 <div class="images__item">
-                    <!-- <img class="images__img" src={ rutePath + "/img/hospitality01-02.jpg" } alt=""> -->
-                    <Picture src={ rutePath + "/img/hospitality01-02.jpg" } widths={[400,600]} aspectRatio="16:9" sizes="(max-width: 640px) 100vw, 640px" alt="The Google logo" formats={['jpg','webp']}/>
+                    <img class="images__img" src={ rutePath + "/img/hospitality01-02.jpg" } alt="">
+                    <!-- <Picture src={ rutePath + "/img/hospitality01-02.jpg" } widths={[400,600]} aspectRatio="16:9" sizes="(max-width: 640px) 100vw, 640px" alt="The Google logo" formats={['jpg','webp']}/> -->
                     <p class="images__text">緑が目の前に広がる石焼会席</p>
                 </div>
                 <div class="images__item">
@@ -152,6 +153,8 @@ const { rutePath } = Astro.props;
 }
 .heading{
     @include v.common_heading;
+
+
 }
 
 .sec{
@@ -165,12 +168,16 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/hospitality01-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: right top, center;
+
     }
     &--second{
         background-image: 
             url(  v.$rutePath + '/img/hospitality02-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
+        @include v.mq(md){
+            background-position: right top, center;
+        }
     }
 
     &--third{
@@ -185,6 +192,9 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/hospitality04-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
+        @include v.mq(md){
+            background-position: right top, center;
+        }
     }
 
 
@@ -196,11 +206,18 @@ const { rutePath } = Astro.props;
         width: 55%;
 
         padding-right: 20px;
+        @include v.mq(md){
+            width: 96%;
+         
+        }
         &--second,
         &--fourth{
             margin-left: auto;
             padding-left: 20px;
             padding-right: 0;
+            @include v.mq(md){
+                padding-left: 0px;
+            }
         }
         
     }
@@ -223,11 +240,20 @@ const { rutePath } = Astro.props;
         font-size: 15px;
         padding-right: 20px;
         min-height: 150px;
+        @include v.mq(md){
+            width: 96%;
+            min-height: unset;
+        }
+
         &--second,
         &--fourth{
             margin-left: auto;
             padding-left: 20px;
             padding-right: 0;
+            @include v.mq(md){
+                padding-left: 0px;
+              }
+
         }
     }
 }
@@ -239,7 +265,7 @@ const { rutePath } = Astro.props;
     gap: 40px ;
     justify-content: space-between;
     &--second{
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
     }
     
     &__img{
