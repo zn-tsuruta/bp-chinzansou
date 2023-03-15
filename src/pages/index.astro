@@ -10,6 +10,10 @@ import Ceremony from '../components/Ceremony.astro'
 import Conversion03 from '../components/Conversion03.astro'
 import Voice from '../components/Voice.astro'
 
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+
 import '../styles/reset.scss';
 import '../styles/common.scss';
 
@@ -18,9 +22,7 @@ const rutePath = '/chinzansou';
 ---
 
 <Layout title="椿山荘">
-	<header>
-		
-	</header>
+	<Header rutePath={rutePath}/>
 	<main>
 		<MainVisual rutePath={rutePath}/>
 		<Hospitality  rutePath={rutePath} />
@@ -31,9 +33,9 @@ const rutePath = '/chinzansou';
 		<Conversion03  rutePath={rutePath} />
 		<Voice  rutePath={rutePath} />
 	</main>
-	<footer>
-		<script src="https://kit.fontawesome.com/6d24b21b1e.js"></script>
-	</footer>
+	<Footer rutePath={rutePath}/>
+
+
 </Layout>
 
 
