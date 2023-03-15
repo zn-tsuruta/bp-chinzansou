@@ -1,4 +1,640 @@
 ---
-const rutePath = '/chinzansou';
-
+const rutePath = "/chinzansou";
 ---
+
+<header id="header">
+	<div class="contentInner">
+		<div class="inner">
+			<h1 class="logo">
+				<a href="https://hotel-chinzanso-tokyo.jp/"
+					><img
+						src="https://hotel-chinzanso-tokyo.jp/common/img/logo_gold.svg"
+						alt="椿山荘"
+					/></a
+				>
+			</h1>
+
+			<ul class="headTxtSp">
+				<li class="link">
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/">WEDDING TOP</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="headTxt">
+			<li class="tel">
+				<span class="ttl">TEL:</span>03-3943-0417 <span class="sub"
+					>営業時間 11:00～19:00（土日祝 10:00～19:00）　|　定休日
+					火曜日（祝除く）</span
+				>
+			</li>
+			<li class="link">
+				<a href="https://hotel-chinzanso-tokyo.jp/wedding/"
+					>ウエディングトップ</a>
+			</li>
+			<li class="link">
+				<a href="https://hotel-chinzanso-tokyo.jp/wedding/access/">アクセス</a>
+			</li>
+		</ul>
+		<nav id="gNavi">
+			<ul>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/concept/"
+						>コンセプト</a>
+				</li>
+				<li>
+					<a
+						href="https://hotel-chinzanso-tokyo.fuwel.wedding/fair"
+						onclick="dataLayer.push({'eventcat3':'フェア予約(ヘッダー)'})"
+						target="_blank">フェア</a
+					>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.fuwel.wedding/plan">プラン</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/style/"
+						>ウエディングスタイル</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/ceremony/">挙式</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/party/">披露宴</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/cuisine/">料理</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/report/"
+						>ウエディングレポート</a>
+				</li>
+			</ul>
+		</nav>
+		<nav id="gNaviSP">
+			<ul class="nav">
+				<li class="icon-fair">
+					<a
+						href="https://hotel-chinzanso-tokyo.fuwel.wedding/fair"
+						onclick="dataLayer.push({'eventcat3':'フェア予約(ヘッダー)'})"
+						target="_blank"><span>フェア</span></a
+					>
+				</li>
+				<li class="icon-access">
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/access/"
+						><span>アクセス</span></a
+					>
+				</li>
+				<li class="openClose"><span></span></li>
+			</ul>
+			<ul class="cont">
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/"
+						>ウエディングトップ</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/concept/"
+						>CONCEPT コンセプト</a>
+				</li>
+				<li>
+					<a
+						href="https://hotel-chinzanso-tokyo.fuwel.wedding/fair"
+						onclick="dataLayer.push({'eventcat3':'フェア予約(ヘッダー)'})"
+						target="_blank">FAIR フェア</a
+					>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.fuwel.wedding/plan"
+						>PLAN プラン</a
+					>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/style/"
+						>WEDDING STYLE ウエディングスタイル</a
+					>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/ceremony/"
+						>CEREMONY 挙式</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/party/"
+						>BANQUET 披露宴</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/cuisine/"
+						>CUISINE 料理</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/access/"
+						>ACCESS アクセス</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/news/"
+						>NEWS ニュース</a>
+				</li>
+				<li>
+					<a href="https://hotel-chinzanso-tokyo.jp/wedding/report/"
+						>REPORT ウエディングレポート</a>
+				</li>
+				<li class="btn">
+					<a
+						href="https://fjt.s.bvnavi-asp.com/fujitakanko/chinzanso/login.php"
+						target="_blank">ご成約者専用サイトへ</a
+					>
+				</li>
+			</ul>
+		</nav>
+	</div><!-- /.contentInner -->
+</header>
+
+<script>
+	const openClose = document.querySelector('.openClose') as HTMLElement;
+	const gNaviSP = document.querySelector('#gNaviSP') as HTMLElement;
+	const cont = document.querySelector('.cont') as HTMLElement;
+
+	openClose.addEventListener('click', function() {
+		gNaviSP.classList.toggle('active');
+		cont.style.display = (gNaviSP.classList.contains('active')) ? 'block' : 'none';
+	});
+</script>
+
+<style lang="scss">
+	@use "../styles/variables.scss" as v;
+
+	// 椿山荘 wedding.css
+	// -------------------------------------------------------------------------------------------------
+	#header {
+		position: fixed;
+		background: #fff;
+		width: 100%;
+		height: 85px;
+		z-index: 10;
+		transition: all 0.3s ease;
+		font-family: "-apple-system", "游ゴシック", "Yu Gothic", YuGothic, Verdana,
+			Meiryo, "M+ 1p", sans-serif;
+		box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+	}
+	#header .contentInner {
+		position: relative;
+		height: 100%;
+		width: 1240px;
+		max-width: 1240px;
+		margin: 0 auto;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .contentInner {
+			margin: 0 10px;
+			width: auto;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header .contentInner {
+			margin: 0;
+		}
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header {
+			height: 95px;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header {
+			height: 80px;
+			box-shadow: none;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header .inner {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			-ms-flex-align: center;
+			align-items: center;
+			border-bottom: 1px solid #999;
+			height: 40px;
+			padding: 0 20px;
+			background: #fff;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	#header .inner .logo {
+		width: 278px;
+		margin: 23px 0 0 0;
+		float: left;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .inner .logo {
+			width: 255px;
+			margin: 10px 0 0 0;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header .inner .logo {
+			width: auto;
+			margin: 0;
+			float: none;
+		}
+	}
+
+	@media screen and (max-width: 1023px) and (max-width: 1023px) {
+		#header .inner .logo img {
+			width: 173px;
+		}
+	}
+
+	#header .inner .headTxtSp {
+		display: none;
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header .inner .headTxtSp {
+			display: block;
+		}
+	}
+
+	#header .inner .headTxtSp li {
+		font-family: "BaskervilleURW";
+	}
+
+	#header .headTxt {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-ms-flex-align: center;
+		align-items: center;
+		margin: 0;
+		height: 43px;
+		width: 830px;
+		float: right;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .headTxt {
+			height: 40px;
+			width: 720px;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header .headTxt {
+			display: none;
+		}
+	}
+
+	#header .headTxt > li {
+		font-size: 12px;
+		margin-right: 15px;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .headTxt > li {
+			font-size: 11px;
+			margin-right: 6px;
+		}
+	}
+
+	#header .headTxt > li:last-child {
+		margin-right: 0;
+	}
+
+	#header .headTxt > li ul {
+		display: none;
+	}
+
+	#header .headTxt > li.tel {
+		font-size: 18px;
+		font-family: "游明朝体", "Yu Mincho", YuMincho, "Times New Roman",
+			"Hiragino Mincho ProN", "Hiragino Mincho Pro", "HG明朝E", "ＭＳ Ｐ明朝",
+			sans-serif;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .headTxt > li.tel {
+			font-size: 17px;
+		}
+	}
+
+	#header .headTxt > li.tel .ttl {
+		font-size: 12px;
+	}
+
+	#header .headTxt > li.tel .sub {
+		font-size: 11px;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .headTxt > li.tel .sub {
+			font-size: 10px;
+		}
+	}
+
+	#header .headTxt > li.link {
+		font-size: 15px;
+	}
+
+	@media screen and (max-width: 1260px) {
+		#header .headTxt > li.link {
+			font-size: 13px;
+		}
+	}
+
+	#header .headTxt > li.link a {
+		background: url(https://hotel-chinzanso-tokyo.jp/common/img/wedding/arrow02.png)
+			no-repeat left center;
+		padding-left: 10px;
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header #gNavi {
+			display: none;
+		}
+	}
+
+	#header #gNavi > ul {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		position: absolute;
+		bottom: 8px;
+		right: 0;
+		width: 830px;
+	}
+
+	#header #gNavi > ul > li {
+		margin-left: 12px;
+		font-size: 14px;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+	}
+
+	#header #gNavi > ul > li:first-child {
+		margin-left: 0;
+	}
+
+	#header #gNavi > ul > li:last-child {
+		background: none;
+		-ms-flex-positive: 0;
+		flex-grow: 0;
+	}
+
+	#header #gNaviSP {
+		display: none;
+	}
+
+	@media screen and (max-width: 1023px) {
+		#header #gNaviSP {
+			display: block;
+		}
+	}
+
+	#header #gNaviSP.active .nav li.openClose span {
+		height: 0;
+	}
+
+	#header #gNaviSP.active .nav li.openClose span:after,
+	#header #gNaviSP.active .nav li.openClose span:before {
+		top: 0;
+		bottom: 0;
+	}
+
+	#header #gNaviSP.active .nav li.openClose span:before {
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	#header #gNaviSP.active .nav li.openClose span:after {
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	#header #gNaviSP .nav {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-ms-flex-align: center;
+		align-items: center;
+		box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+		position: relative;
+		z-index: 1;
+		background: #98854e;
+	}
+
+	#header #gNaviSP .nav li {
+		height: 40px;
+		display: -ms-flexbox;
+		display: flex;
+		text-align: center;
+		font-family: "游明朝体", "Yu Mincho", YuMincho, "Times New Roman",
+			"Hiragino Mincho ProN", "Hiragino Mincho Pro", "HG明朝E", "ＭＳ Ｐ明朝",
+			sans-serif;
+	}
+
+	#header #gNaviSP .nav li + li {
+		border-left: 1px solid #999;
+	}
+
+	#header #gNaviSP .nav li[class^="icon-"] {
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+	}
+
+	#header #gNaviSP .nav li[class^="icon-"] a {
+		display: block;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-ms-flex-align: center;
+		align-items: center;
+		width: 100%;
+		color: #fff;
+	}
+
+	#header #gNaviSP .nav li[class^="icon-"] a:before {
+		content: "";
+		height: 20px;
+		width: 20px;
+		background: #f00;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		background: url(https://hotel-chinzanso-tokyo.jp/common/img/wedding/ico_access.png)
+			no-repeat center center;
+		background-size: contain;
+	}
+
+	#header #gNaviSP .nav li[class^="icon-"].icon-fair a:before {
+		background-image: url(https://hotel-chinzanso-tokyo.jp/common/img/wedding/ico_fair_white.png);
+	}
+
+	#header #gNaviSP .nav li[class^="icon-"].icon-access a:before {
+		background-image: url(https://hotel-chinzanso-tokyo.jp/common/img/wedding/ico_access_white.png);
+	}
+
+	#header #gNaviSP .nav li.openClose {
+		width: 40px;
+		display: block;
+		position: relative;
+		cursor: pointer;
+	}
+
+	#header #gNaviSP .nav li.openClose span {
+		background: #fff;
+		display: block;
+		width: 22px;
+		height: 1px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+
+	#header #gNaviSP .nav li.openClose span:after,
+	#header #gNaviSP .nav li.openClose span:before {
+		content: "";
+		position: absolute;
+		background: #fff;
+		display: block;
+		width: 22px;
+		height: 1px;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		transition: all 0.3s ease;
+	}
+
+	#header #gNaviSP .nav li.openClose span:before {
+		top: 6px;
+	}
+
+	#header #gNaviSP .nav li.openClose span:after {
+		bottom: 6px;
+	}
+
+	#header #gNaviSP .cont {
+		display: none;
+		background: #fff;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		height: calc(100vh - 80px);
+		overflow-y: scroll;
+	}
+
+	#header #gNaviSP .cont > li {
+		font-size: 15px;
+		padding: 10px 0;
+	}
+
+	#header #gNaviSP .cont > li > span {
+		cursor: pointer;
+		position: relative;
+		padding: 0 15px;
+	}
+
+	#header #gNaviSP .cont > li > span:after {
+		content: "";
+		background: url("/common/img/wedding/arrow04.png") no-repeat;
+		background-size: contain;
+		height: 8px;
+		width: 8px;
+		position: absolute;
+		top: 6px;
+		right: 0;
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	#header #gNaviSP .cont > li.active > span:after {
+		top: 3px;
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+
+	#header #gNaviSP .cont > li > ul {
+		display: none;
+		margin-top: 10px;
+	}
+
+	#header #gNaviSP .cont > li > ul li {
+		font-size: 13px;
+		padding: 5px 0;
+	}
+
+	#header #gNaviSP .cont > li.btn {
+		margin: 40px 20px 0;
+		font-size: 11px;
+	}
+
+	#header #gNaviSP .cont > li.btn a {
+		border: 1px solid #999;
+		display: block;
+		padding: 10px;
+	}
+	// -------------------------------------------------------------------------------------------------
+
+	// 椿山荘 header.css
+	// -------------------------------------------------------------------------------------------------
+	@charset "UTF-8";
+
+	body.hotel #header #gNaviSP > .cont > li {
+		padding: 10px 0 10px 15px;
+	}
+	body.hotel #header #gNaviSP > .cont > li.menu-top {
+		padding: 10px 0 10px 5px;
+	}
+	body.hotel #header #gNaviSP > .cont > li > ul {
+		display: block;
+		padding: 5px 0 5px 15px;
+	}
+	body.hotel #header #gNaviSP ul.cont li ul li {
+		display: block;
+		padding: 5px 0 5px 15px;
+	}
+	body.hotel #header #gNavi > ul > li .cont .contentInner > dl dd,
+	body.hotel #header #gNavi > ul > li .cont .contentInner > dl dt {
+		font-size: 15px;
+		line-height: 1.2em;
+		margin-bottom: 8px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+	body.hotel #header #gNavi > ul > li .cont .contentInner > dl dd dl dd {
+		margin: 5px 0;
+		line-height: 1em;
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+	/*-------------------------------------------------
+スマホ版の展開用▶を下向きに 2022/05/16
+--------------------------------------------------*/
+	@media screen and (max-width: 1023px) {
+		details summary {
+			list-style: none;
+		}
+		details summary::-webkit-details-marker {
+			display: none;
+		}
+		details summary::after {
+			content: "\025bc";
+			margin-left: 10px;
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------
+</style>
