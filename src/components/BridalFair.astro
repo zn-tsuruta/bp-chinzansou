@@ -21,12 +21,11 @@ const { rutePath } = Astro.props;
             </div>
 
             <div class="ratio__lead">
-                <p><a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">「ＺＥＸＹ(ゼクシィ)」の調査</a>によれば、<br class="mdbr">試食会付きのブライダルフェアに参加した<br class="mdbr">カップルの割合は実に９割以上です。<br>雰囲気に慣れたいと思っていたり、<br class="mdbr">どこで挙式しようか迷っていたりするなら<br class="mdbr">フェアのご利用をオススメします。</p>
+                <p>「ゼクシィ」の調査によれば、<br class="mdbr">試食会付きのブライダルフェアに参加した<br class="mdbr">カップルの割合は実に９割以上です。<br>雰囲気に慣れたいと思っていたり、<br class="mdbr">どこで挙式しようか迷っていたりするなら<br class="mdbr">フェアのご利用をオススメします。</p>
             </div> 
 
             <div class="ratio__heading2">
-                <h3>みんなどのくらい試食会に参加してる？</h3>
-                <p>(参考 : <a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">https://zexy.net/wedding/bridalfair/tasting/</a>)</p>
+                <h3 class="ratio__heading2-text">みんなどのくらい試食会に参加してる？</h3>
             </div>
 
             <div class="ratio__grid">
@@ -36,7 +35,8 @@ const { rutePath } = Astro.props;
                 </div>
 
                 <div class="ratio__text">
-                    <p>ゼクシィの調査によれば、先輩花嫁206人に「試食会付きのブライダルフェアに参加しましたか？」と聞いたところ、93.7％の人がYesと回答。ほとんどの人が会場を決める前に試食を体験しているようです。会場を決めるには雰囲気やイメージだけでなく、料理内容やその味を確かめることが重要だと、多くの花嫁の方々が考えるようです。</p>
+                    <p>ゼクシィの調査<small class="ratio__text-small">(*)</small>によれば、先輩花嫁206人に「試食会付きのブライダルフェアに参加しましたか？」と聞いたところ、93.7％の人がYesと回答。ほとんどの人が会場を決める前に試食を体験しているようです。会場を決めるには雰囲気やイメージだけでなく、料理内容やその味を確かめることが重要だと、多くの花嫁の方々が考えるようです。</p>
+                    <small class="ratio__text-small">*引用元：<a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">ブライダルフェアの種類とメリットをご紹介！</a></small>
                 </div>
 
                 <div class="ratio__images">
@@ -146,7 +146,6 @@ const { rutePath } = Astro.props;
         text-align: center;
         margin-bottom: 40px;
         @include v.mq(md){
-            font-size: 14px;
             margin-bottom: 20px;
         }
         a{
@@ -155,6 +154,13 @@ const { rutePath } = Astro.props;
             }   
         }
     }
+    &__heading2-text{
+        font-size: 24px;
+        @include v.mq(md){
+            font-size: 18px;
+        }
+    }
+
 
     &__grid{
         display: grid;
@@ -180,6 +186,14 @@ const { rutePath } = Astro.props;
             font-size: 14px;
         }
     }
+
+    &__text-small{
+        font-size: 12px;
+        @include v.mq(md){
+            font-size: 10px;
+        }
+    }
+
     &__images{
         
         grid-area: i;

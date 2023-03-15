@@ -115,6 +115,11 @@ const { rutePath } = Astro.props;
             <div class="sec__text  sec__text--fourth">
                 <p>「フォーブス・トラベルガイド」が発表した格付けの、ホテル部門・スパ部門で名だたるホテルが並ぶ4つ星を獲得(「フォーブストラベルガイドとは権威ある5つ星の格付けシステムを世界で初めて導入したトラベルガイド)。1958年の創設以来、60年以上にわたりサービスやホスピタリティに優れた高級ホテルの格付けとレビューを提供しています。また、特に最高級の施設とサービスにより、記憶に残る体験を提供するホテルとして認められ「プリファードホテルズ & リゾーツ」の「L.V.X. Collection」に加盟いたしております。会社の方やご年配の方までも幅広いゲストが格別な時間を過ごせることをお約束します。</p>
             </div>
+
+            <div class="sec__sp-image">
+                <img src={ rutePath + "/img/hospitality04-bg-sp.jpg" } alt="">
+            </div>
+
             <div class="images ">
                 <div class="images__item">
                     <img class="images__img" src={ rutePath + "/img/hospitality04-01.jpg" } alt="">
@@ -204,7 +209,9 @@ const { rutePath } = Astro.props;
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
         @include v.mq(md){
-            background-position: right top, center;
+            background-position: left top;
+            background-image: linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), v.$cream calc(45vw * 9 / 16), v.$cream 100%);
+            background-size: 100% calc(45vw * 9 / 16);
         }
     }
 
@@ -246,7 +253,6 @@ const { rutePath } = Astro.props;
 		@include v.mq(sm){
 			font-size: max(25px, v.px2vw(30,640));
 		}
-
     }
     &__heading-text{
         font-weight: bold;
@@ -259,6 +265,16 @@ const { rutePath } = Astro.props;
 		}
     }
 
+    &__sp-image{
+        display: none;
+        @include v.mq(md){
+            display: block;
+            width: 50%;
+            margin: 25px auto;
+		}
+    }
+
+
     &__text{
         width: 55%;
         margin-bottom: 40px;
@@ -269,7 +285,6 @@ const { rutePath } = Astro.props;
             width: 96%;
             min-height: unset;
             padding-right: 0;
-
         }
 		@include v.mq(sm){
 			font-size: max(14px, v.px2vw(15,640));
@@ -283,11 +298,14 @@ const { rutePath } = Astro.props;
                 padding-left: 0px;
                 margin-left: 0;
             }
-
+        }
+        &--fourth{
+            @include v.mq(md){
+                margin-bottom: 0px;
+            }
         }
     }
 }
-
 
 .images{
     display: grid;
