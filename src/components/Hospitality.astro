@@ -162,6 +162,13 @@ const { rutePath } = Astro.props;
     padding-bottom: 50px;
     margin-bottom: 50px;
     background-size: 45vw auto,cover;
+    @include v.mq(md){
+        padding-top: 15px;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+
+
     &--first{
         background-image: 
             url(  v.$rutePath + '/img/hospitality01-bg.jpg'),    
@@ -206,7 +213,8 @@ const { rutePath } = Astro.props;
         padding-right: 20px;
         @include v.mq(md){
             width: 96%;
-         
+            padding-right: 0;
+
         }
         &--second,
         &--fourth{
@@ -215,6 +223,7 @@ const { rutePath } = Astro.props;
             padding-right: 0;
             @include v.mq(md){
                 padding-left: 0px;
+                margin-left: 0;
             }
         }
         
@@ -254,6 +263,8 @@ const { rutePath } = Astro.props;
         @include v.mq(md){
             width: 96%;
             min-height: unset;
+            padding-right: 0;
+
         }
 		@include v.mq(sm){
 			font-size: max(14px, v.px2vw(15,640));
@@ -265,7 +276,8 @@ const { rutePath } = Astro.props;
             padding-right: 0;
             @include v.mq(md){
                 padding-left: 0px;
-              }
+                margin-left: 0;
+            }
 
         }
     }
@@ -274,7 +286,7 @@ const { rutePath } = Astro.props;
 
 .images{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto auto;
     gap: 40px ;
     justify-content: space-between;
