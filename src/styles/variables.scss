@@ -39,9 +39,9 @@ $mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "M
 
 @mixin common_heading() {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 	@include mq(md){
-		margin-bottom: 50px;
+		margin-bottom: 25px;
         
     }
 

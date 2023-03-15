@@ -154,6 +154,11 @@ const { rutePath } = Astro.props;
 }
 .heading{
     @include v.common_heading;
+    margin-bottom: 100px;
+	@include v.mq(md){
+		margin-bottom: 50px;
+        
+    }
 }
 
 .sec{
