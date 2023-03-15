@@ -4,11 +4,11 @@ const { rutePath } = Astro.props;
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">VOICE</span>
-        <h2 class="heading__jp">ホテル椿山荘東京で挙式された方の体験談</h2>
+        <h2 class="heading__jp">ホテル椿山荘東京で<br class="mdbr">挙式された方の体験談</h2>
     </div>
 
     <div class="lead">
-        <p>誰ひとりとして同じ結婚式はございません。ホテル椿山荘東京は皆様ひとりひとりの<br>物語を大切にしています。最後にそんな皆様からのお声をご紹介します。</p>
+        <p>誰ひとりとして同じ結婚式はございません。<br class="mdbr">ホテル椿山荘東京は皆様ひとりひとりの<br>物語を大切にしています。最後にそんな皆様からの<br class="mdbr">お声をご紹介します。</p>
     </div>
 
     <div class="voice">
@@ -139,7 +139,6 @@ const { rutePath } = Astro.props;
         <a href="#">ウエディングレポートへ <i class="fas fa-chevron-right"></i></a>
     </div>
 
-
 </div>
 
 <style lang="scss">
@@ -163,25 +162,41 @@ const { rutePath } = Astro.props;
 		font-size: max(14px, v.px2vw(16,768));
         margin-bottom: 50px;
 	}
+
 }
 
 .voice{
     @include v.main_width;
     margin-bottom: 100px;
+    @include v.mq(md){
+        margin-bottom: 50px;
+    }
     &__box{
         border-bottom: 1px solid v.$gold;
         padding-top: 50px;
         padding-bottom: 50px;
+        @include v.mq(sm){
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
     }
 
     &__heading{
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
+        @include v.mq(md){
+            font-size: max(18px, v.px2vw(24,768));
+            margin-bottom: 10px;
+        }
     }
 
     &__text{
         margin-bottom: 20px;
+        @include v.mq(md){
+            font-size: 14px;
+         
+        }
     }
    
 }
@@ -202,6 +217,12 @@ const { rutePath } = Astro.props;
         display: block;
         border-radius: 3em;
         font-weight: bold;
+
+        @include v.mq(md){
+            padding: 10px 50px 8px 60px;
+            font-size: 18px;
+        }
+
     }
     i{
         margin-left: 30px;

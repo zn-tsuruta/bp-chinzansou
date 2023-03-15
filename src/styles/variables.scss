@@ -60,9 +60,9 @@ $mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "M
 		@include mq(md){
 			font-size: max(21px, px2vw(32,768));
 		}
-		@include mq(sm){
-			font-size: max(18px, px2vw(21,640));
-		}
+		// @include mq(sm){
+		// 	font-size: max(20px, px2vw(21,640));
+		// }
 	}
 }
 
@@ -156,7 +156,7 @@ $main_width : 1280px;
 			font-size: max(17px, px2vw(24,1280));
 		}
 		@include mq(md){
-			font-size: max(16px, px2vw(17,768));
+			font-size: max(15px, px2vw(17,768));
 		}
 		@include mq(sm){
 			margin-bottom: 40px;
