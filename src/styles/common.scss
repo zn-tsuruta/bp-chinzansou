@@ -1,5 +1,25 @@
 @use '../styles/variables.scss' as v;
+
 .text-link{
 	color: v.$green;
     text-decoration: underline;
+}
+
+.md-hide{
+    display: inline;
+    @include v.mq(md){
+        display: none;
+    }
+}
+.mdbr{
+    display: none;
+    @include v.mq(md){
+        display: inline;
+    }
+}
+.sdbr{
+    display: none;
+    @include v.mq(sm){
+        display: inline;
+    }
 }

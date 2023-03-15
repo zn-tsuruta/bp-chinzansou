@@ -12,10 +12,10 @@ const { rutePath } = Astro.props;
 
     <div class="main-visual__btns">
         <div class="main-visual__btn">
-            <a class="main-visual__btn-link main-visual__btn-link--green" href="http://hotel-chinzanso-tokyo.fuwel.wedding/fair">現在開催予定の<br><span class="em">ブライダルフェア</span>はこちら</a>
+            <a class="main-visual__btn-link main-visual__btn-link--green" href="http://hotel-chinzanso-tokyo.fuwel.wedding/fair"><span class="md-hide">現在開催予定の<br></span><span class="em">ブライダルフェア</span>はこちら</a>
         </div>
         <div class="main-visual__btn">
-            <a class="main-visual__btn-link main-visual__btn-link--gold" href="https://hotel-chinzanso-tokyo.fuwel.wedding/contact#contact-type-request">ＷＥＢパンフレットの<br><span class="em">資料請求</span>はこちら</a>
+            <a class="main-visual__btn-link main-visual__btn-link--gold" href="https://hotel-chinzanso-tokyo.fuwel.wedding/contact#contact-type-request"><span class="md-hide">ＷＥＢパンフレットの<br></span><span class="em">資料請求</span>はこちら</a>
         </div>
     </div>
 </div>
@@ -55,6 +55,17 @@ const { rutePath } = Astro.props;
         @include v.mq(lg){
             font-size: max(28px, v.px2vw(32,1024));
         }
+        @include v.mq(md){
+            font-size: max(26px, v.px2vw(28,768));
+        }
+        @include v.mq(sm){
+            
+            padding: 10px;
+            font-size: max(20px, v.px2vw(26,640));
+            br{
+                display: none;
+            }
+        }
     }
 
     &__btns{
@@ -67,6 +78,9 @@ const { rutePath } = Astro.props;
         padding-bottom: 20px;
         justify-content: center;
         gap: 20px;
+        @include v.mq(sm){
+            gap: 10px;
+        }
     }
 
     &__btn{
@@ -77,6 +91,9 @@ const { rutePath } = Astro.props;
         @include v.mq(lg){
             width: max(360px,v.px2vw(400,1024));
         }
+        @include v.mq(sm){
+            width: 48%;
+        }
     }
 
     &__btn-link{
@@ -86,11 +103,18 @@ const { rutePath } = Astro.props;
         @include v.mq(lg){
             font-size: max(15px, v.px2vw(16,1024));
         }
+        @include v.mq(md){
+            padding: 10px;
+        }
         .em{
             display: inline-block;
             font-size: 32px;
             @include v.mq(lg){
                 font-size: max(28px, v.px2vw(32,1024));
+            }
+            @include v.mq(md){
+                font-size: max(17px, v.px2vw(28,768));
+                display: block;
             }
         }
         &--green{

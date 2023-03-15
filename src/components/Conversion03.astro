@@ -6,7 +6,7 @@ const { rutePath } = Astro.props;
     <div class="inner">
 
         <div class="heading">
-            <h2 class="heading__text">ホテル椿山荘東京では定期的にブライダルフェアを開催</h2>
+            <h2 class="heading__text">ホテル椿山荘東京では<br class="mdbr">定期的にブライダルフェアを開催</h2>
         </div>
 
         <div class="text">
@@ -30,96 +30,7 @@ const { rutePath } = Astro.props;
 
 <style lang="scss">
 @use '../styles/variables.scss' as v;
-    
-.wrapper{
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-image: url(  v.$rutePath + '/img/cv03-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    font-family: v.$mincho;
-    position: relative;
-    max-width: 100%;
-}
-
-.inner{
-    @include v.main_width;
-    background-color: rgba(#fff,.5);
-    padding: 64px 100px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    @include v.mq(xl) {
-        position: relative;
-		transform: unset;
-        top: unset;
-        left: unset;
-        padding: 64px 40px;
-	}
-}
-
-.heading{
-    font-size: 24px;
-    text-align: center;
-    border-bottom: v.$gold 4px solid;
-    padding-bottom: 30px ;
-    margin-bottom: 64px;
-}
-
-.text{
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 80px;
-    p{
-        margin-bottom: 1em;
-        font-weight: bold;
-    }
-}
-
-.btns{
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    &__item{
-        padding: 20px 0 16px;
-        display: block;
-        width: 60%;
-        text-align: center;
-        &--green{
-            background-color: v.$green;
-            color: v.$green;
-        }
-        &--gold{
-            background-color: v.$gold;
-            color: v.$gold;
-        }
-    }
-    &__above{
-        background-color: #fff;
-        display: block;
-        width: 280px;
-        max-width: 100%;;
-
-        margin: 0 auto;
-        padding: 4px 12px;
-        border-radius: 3em;
-        margin-bottom: 10px;
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    &__text{
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    &__em{
-        color: #fff;
-        font-size: 32px;
-    }
-}
+@include v.cv_area;
 
 
 </style>

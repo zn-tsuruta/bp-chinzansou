@@ -146,17 +146,23 @@ const { rutePath } = Astro.props;
 @use '../styles/variables.scss' as v;
 
 .wrapper{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     font-family: v.$mincho;
+    @include v.mq(md){
+        padding: 50px 0;
+    }
 }
 .heading{
     @include v.common_heading;
 }
-
 .lead{
     text-align: center;
-    margin-bottom: 50px;
+    max-width: 96%;
+    margin: 0 auto 100px;
+    @include v.mq(md){
+		font-size: max(14px, v.px2vw(16,768));
+        margin-bottom: 50px;
+	}
 }
 
 .voice{

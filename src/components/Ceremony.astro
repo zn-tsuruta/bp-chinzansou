@@ -5,8 +5,9 @@ const { rutePath } = Astro.props;
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">Ceremony</span>
-        <h2 class="heading__jp">ホテル椿山荘東京のウエディングが選ばれる理由</h2>
+        <h2 class="heading__jp">ホテル椿山荘東京の挙式</h2>
     </div>
+
 
     <div class="lead">
         <p>チャペルウエディング、神殿挙式、料亭ウエディング、ガーデンウエディング、などご希望に合わせた挙式スタイルを幅広くご提案します。</p>
@@ -291,16 +292,23 @@ const { rutePath } = Astro.props;
 @use '../styles/variables.scss' as v;
 
 .wrapper{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     font-family: v.$mincho;
+    @include v.mq(md){
+        padding: 50px 0;
+    }
 }
 .heading{
     @include v.common_heading;
 }
 .lead{
     text-align: center;
-    margin-bottom: 100px;
+    max-width: 96%;
+    margin: 0 auto 100px;
+    @include v.mq(md){
+		font-size: max(14px, v.px2vw(16,768));
+        margin-bottom: 50px;
+	}
 }
 
 .ceremony-heading{
@@ -311,13 +319,21 @@ const { rutePath } = Astro.props;
     position: relative;
     display: flex;
     align-items: center;
+
+    @include v.mq(md){
+            font-size: max(22px, v.px2vw(32,768));
+        }
+
     &::before{
         content: attr(data-en);
         position: absolute;
         left: 100px;
         font-size: 80px;
         z-index: -1;
-        color: #F2F2F2;        
+        color: #F2F2F2;
+        @include v.mq(md){
+            font-size: max(40px, v.px2vw(80,768));
+        }
     }
 }
 
@@ -338,6 +354,9 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/ceremony02-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
+        @include v.mq(md){
+            background-position: right top, center;
+        }
     }
 
     &--third{
@@ -352,6 +371,9 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/ceremony04-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
+        @include v.mq(md){
+            background-position: right top, center;
+        }
     }
 
     &--fifth{
@@ -366,6 +388,9 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/ceremony06-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
+        @include v.mq(md){
+            background-position: right top, center;
+        }
     }
 
     &--seventh{
@@ -373,6 +398,7 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/ceremony07-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: right top, center;
+        
     }
 
     &--eighth{
@@ -380,6 +406,9 @@ const { rutePath } = Astro.props;
             url(  v.$rutePath + '/img/ceremony08-bg.jpg'),    
             linear-gradient(180deg, v.$cream 0%, v.$cream calc(45vw * 9 / 16), #fff calc(45vw * 9 / 16), #fff 100%);
         background-position: left top, center;
+        @include v.mq(md){
+            background-position: right top, center;
+        }
     }
 
 
@@ -389,8 +418,10 @@ const { rutePath } = Astro.props;
     &__heading{
         margin-bottom: 20px;
         width: 55%;
-
         padding-right: 20px;
+        @include v.mq(md){
+            width: 96%;
+        }
         &--second,
         &--fourth,
         &--sixth,
@@ -420,7 +451,9 @@ const { rutePath } = Astro.props;
         margin-bottom: 80px;
         font-size: 15px;
         padding-right: 20px;
-
+        @include v.mq(md){
+            width: 96%;
+        }
         &--second,
         &--fourth,
         &--sixth,

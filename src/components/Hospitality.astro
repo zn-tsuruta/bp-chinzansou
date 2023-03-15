@@ -5,7 +5,7 @@ const { rutePath } = Astro.props;
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">HOSPITALITY</span>
-        <h2 class="heading__jp">ホテル椿山荘東京のウエディングが選ばれる理由</h2>
+        <h2 class="heading__jp">ホテル椿山荘東京のウエディングが<br class="smbr">選ばれる理由</h2>
     </div>
 
     <div class="sec sec--first">
@@ -146,15 +146,14 @@ const { rutePath } = Astro.props;
 @use '../styles/variables.scss' as v;
 
 .wrapper{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     font-family: v.$mincho;
-    max-width: 100%;
+    @include v.mq(md){
+        padding: 50px 0;
+    }
 }
 .heading{
     @include v.common_heading;
-
-
 }
 
 .sec{
@@ -228,10 +227,23 @@ const { rutePath } = Astro.props;
         display: block;
         border-top: 2px solid;
         padding-right: 100px;
+        @include v.mq(md){
+			font-size: max(30px, v.px2vw(50,768));
+		}
+		@include v.mq(sm){
+			font-size: max(25px, v.px2vw(30,640));
+		}
+
     }
     &__heading-text{
         font-weight: bold;
         font-size: 26px;
+        @include v.mq(md){
+			font-size: max(20px, v.px2vw(26,768));
+		}
+		@include v.mq(sm){
+			font-size: max(18px, v.px2vw(20,640));
+		}
     }
 
     &__text{
@@ -244,7 +256,9 @@ const { rutePath } = Astro.props;
             width: 96%;
             min-height: unset;
         }
-
+		@include v.mq(sm){
+			font-size: max(14px, v.px2vw(15,640));
+		}
         &--second,
         &--fourth{
             margin-left: auto;
@@ -258,14 +272,29 @@ const { rutePath } = Astro.props;
     }
 }
 
+
 .images{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-template-rows: auto auto;
     gap: 40px ;
     justify-content: space-between;
+    @include v.mq(sm){
+        gap: 10px ;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+    @include v.mq(xs){
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	}
     &--second{
         grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+        @include v.mq(sm){
+            gap: 10px ;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+	    }
+        @include v.mq(xs){
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+	    }
     }
     
     &__img{
@@ -276,8 +305,9 @@ const { rutePath } = Astro.props;
         text-align: center;
         font-size: 13px;
         font-weight: bold;
+        @include v.mq(sm){
+            display: none;
+        }
     }
 }
-
-
 </style>

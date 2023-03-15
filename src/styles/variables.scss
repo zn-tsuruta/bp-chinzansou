@@ -40,13 +40,29 @@ $mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "M
 @mixin common_heading() {
     text-align: center;
     margin-bottom: 100px;
-    font-size: 24px;
+	@include mq(md){
+		margin-bottom: 50px;
+        
+    }
+
     &__en{
         color: $gold;
         font-size: 20px;
+		@include mq(md){
+			font-size: max(18px, px2vw(20,768));
+		}
+		@include mq(sm){
+			font-size: max(14px, px2vw(18,640));
+		}
     }
 	&__jp{
 		font-size: 32px;
+		@include mq(md){
+			font-size: max(21px, px2vw(32,768));
+		}
+		@include mq(sm){
+			font-size: max(18px, px2vw(21,640));
+		}
 	}
 }
 
@@ -66,11 +82,158 @@ $main_width : 1280px;
 	}
 }
 
-/* 
+/* px から vw への変換
 ================================================================================================= */
 
 @function px2vw( $px , $width ) {
 	
 	@return calc( ( 1 / ($width / $px) ) * 100vw ) ;
 
+}
+
+/* cv の共通パーツ
+================================================================================================= */
+
+@mixin cv_area() {
+	.wrapper{
+		padding-top: 100px;
+		padding-bottom: 100px;
+		background-image: url(  $rutePath + '/img/cv01-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		min-height: 100vh;
+		font-family: $mincho;
+		position: relative;
+		max-width: 100%;
+		@include mq(md){
+			padding-top: 50px;
+			padding-bottom: 50px;
+			min-height: unset;
+		}
+	}
+	
+	.inner{
+		
+		@include main_width;
+		background-color: rgba(#fff,.8);
+		padding: 64px 40px;
+		position: absolute;
+		transform: translate(-50%,-50%);
+		top: 50%;
+		left: 50%;
+		@include mq(xl) {
+			position: relative;
+			transform: unset;
+			top: unset;
+			left: unset;
+			padding: 32px 20px;
+		}
+	}
+	
+	.heading{
+		font-size: 24px;
+		text-align: center;
+		border-bottom: $gold 4px solid;
+		padding-bottom: 30px ;
+		margin-bottom: 64px;
+		@include mq(xl){
+			font-size: max(17px, px2vw(24,1280));
+		}
+		@include mq(md){
+			font-size: max(12px, px2vw(17,768));
+		}
+		@include mq(sm){
+			padding-bottom: 10px ;
+			margin-bottom: 32px;
+		}
+	}
+	
+	.text{
+		font-size: 24px;
+		text-align: center;
+		margin-bottom: 80px;
+		@include mq(xl){
+			font-size: max(17px, px2vw(24,1280));
+		}
+		@include mq(md){
+			font-size: max(16px, px2vw(17,768));
+		}
+		@include mq(sm){
+			margin-bottom: 40px;
+		}
+		p{
+			margin-bottom: 1em;
+			font-weight: bold;
+		}
+	}
+	
+	.btns{
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+		@include mq(md){
+			gap: 10px;
+		}
+		&__item{
+			padding: 20px 0 16px;
+			display: block;
+			width: 400px;
+			text-align: center;
+			@include mq(xl){
+				width: max(310px,px2vw(400,1280));
+			}
+			@include mq(md){
+				width: max(260px,px2vw(310,768));
+				padding: 10px;
+
+			}
+	
+			&--green{
+				background-color: $green;
+				color: $green;
+			}
+			&--gold{
+				background-color: $gold;
+				color: $gold;
+			}
+	
+		}
+	
+		&__above{
+			background-color: #fff;
+			display: block;
+			width: fit-content;
+			max-width: 100%;;
+			margin: 0 auto;
+			padding: 4px 12px;
+			border-radius: 3em;
+			margin-bottom: 10px;
+			font-size: 14px;
+			font-weight: bold;
+			@include mq(md){
+				display: none;
+			}
+		}
+	
+		&__text{
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+			@include mq(xl){
+				font-size: max(15px, px2vw(18,1280));
+			}
+
+		}
+		&__em{
+			color: #fff;
+			font-size: 32px;
+            @include mq(xl){
+                font-size: max(28px, px2vw(32,1280));
+            }
+            @include mq(md){
+                font-size: max(17px, px2vw(28,768));
+                display: block;
+            }
+		}
+	}
 }

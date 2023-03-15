@@ -4,11 +4,11 @@ const { rutePath } = Astro.props;
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">CUISINE</span>
-        <h2 class="heading__jp">新しい潮流を生み出す THE TOKYO CUISINE</h2>
+        <h2 class="heading__jp">新しい潮流を生み出す<br class="mdbr"> THE TOKYO CUISINE</h2>
     </div>
 
     <div class="lead">
-        <p>ありとあらゆる文化を受け入れながら独自の進化を遂げてきた東京の街のように、<br>THE TOKYO CUISINEは、日本料理やフランス料理といった垣根をこえて新しい潮流を生み出しています。</p>
+        <p>ありとあらゆる文化を受け入れながらす<br class="mdbr">独自の進化を遂げてきた東京の街のように、<br>THE TOKYO CUISINEは、日本料理やす<br class="mdbr">フランス料理といった垣根をこえてす<br class="mdbr">新しい潮流を生み出しています。</p>
     </div>
 
     <div class="message">
@@ -32,10 +32,11 @@ const { rutePath } = Astro.props;
 @use '../styles/variables.scss' as v;
 
 .wrapper{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     font-family: v.$mincho;
-    max-width: 100%;
+    @include v.mq(md){
+        padding: 50px 0;
+    }
 }
 .heading{
     @include v.common_heading;
@@ -43,7 +44,12 @@ const { rutePath } = Astro.props;
 
 .lead{
     text-align: center;
-    margin-bottom: 100px;
+    max-width: 96%;
+    margin: 0 auto 100px;
+    @include v.mq(md){
+		font-size: max(14px, v.px2vw(16,768));
+        margin-bottom: 50px;
+	}
 }
 
 .message{
@@ -57,6 +63,9 @@ const { rutePath } = Astro.props;
         height: 100%;
         right: 0;
         top: 0;
+        @include v.mq(xl){
+            display: none;
+        }
     }
     &__inner{
         display: flex;
@@ -65,16 +74,30 @@ const { rutePath } = Astro.props;
         padding-left: 200px;
         padding-right: 200px;
         gap: 5%;
+        @include v.mq(xl){
+            padding-left: 0px;
+            padding-right:0px;
+        }
+        @include v.mq(md){
+            flex-direction: column-reverse;
+        }
     }
     &__text{
         padding-top: 20px;
         width: 70%;
+        @include v.mq(md){
+		    font-size: max(14px, v.px2vw(16,768));
+            width: 100%;
+	    }
         p{
             margin-bottom: 2em;
         }
     }
     &__image{
         width: 25%;
+        @include v.mq(md){
+            margin: 0 auto;
+	    }
     }
 }
 

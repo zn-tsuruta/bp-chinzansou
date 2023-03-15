@@ -6,23 +6,22 @@ const { rutePath } = Astro.props;
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">BRIDAL FAIR</span>
-        <h2 class="heading__jp">挙式が決まったらまずはブライダルフェアに参加してみましょう</h2>
+        <h2 class="heading__jp">挙式が決まったらまずは<br class="mdbr">ブライダルフェアに参加してみましょう</h2>
     </div>
 
     <div class="lead">
-        <p>ブライダルフェアなら、結婚式場見学だけではなく実際に婚礼料理の試食やウエディングドレスの試着、<br>模擬挙式、披露宴なども体験できます。デート感覚でぜひご利用ください。</p>
+        <p>ブライダルフェアなら、結婚式場見学だけではなく<br class="mdbr">実際に婚礼料理の試食やウエディングドレスの試着、<br>模擬挙式、披露宴なども体験できます。<br class="mdbr">デート感覚でぜひご利用ください。</p>
     </div>
-
     <div class="ratio">
 
         <div class="ratio__inner">
 
             <div class="ratio__heading">
-                <h2>カップルの９割以上が試食会に参加しています</h2>
+                <h2 class="ratio__heading-text">カップルの９割以上が<br class="mdbr">試食会に参加しています</h2>
             </div>
 
             <div class="ratio__lead">
-                <p><a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">「ＺＥＸＹ(ゼクシィ)」の調査</a>によれば、試食会付きのブライダルフェアに参加したカップルの割合は実に９割以上です。<br>雰囲気に慣れたいと思っていたり、どこで挙式しようか迷っていたりするならフェアのご利用をオススメします。</p>
+                <p><a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">「ＺＥＸＹ(ゼクシィ)」の調査</a>によれば、<br class="mdbr">試食会付きのブライダルフェアに参加した<br class="mdbr">カップルの割合は実に９割以上です。<br>雰囲気に慣れたいと思っていたり、<br class="mdbr">どこで挙式しようか迷っていたりするなら<br class="mdbr">フェアのご利用をオススメします。</p>
             </div> 
 
             <div class="ratio__heading2">
@@ -84,10 +83,11 @@ const { rutePath } = Astro.props;
 @use '../styles/variables.scss' as v;
 
 .wrapper{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     font-family: v.$mincho;
-    max-width: 100%;
+    @include v.mq(md){
+        padding: 50px 0;
+    }
 }
 .heading{
     @include v.common_heading;
@@ -95,7 +95,12 @@ const { rutePath } = Astro.props;
 
 .lead{
     text-align: center;
-    margin-bottom: 100px;
+    max-width: 96%;
+    margin: 0 auto 100px;
+    @include v.mq(md){
+		font-size: max(14px, v.px2vw(16,768));
+        margin-bottom: 50px;
+	}
 }
 
 .ratio{
@@ -103,7 +108,7 @@ const { rutePath } = Astro.props;
     background-size: cover;
     background-position: center;
     &__inner{
-        background-color: #fff;
+        background-color: rgba(#fff,.9);
         @include v.main_width;
         padding: 0 30px 30px;
     }
@@ -115,16 +120,40 @@ const { rutePath } = Astro.props;
         padding: 10px 100px;
         border-radius: 3em;
         margin: 0 auto 50px;
+        @include v.mq(md){
+            padding: 10px 20px;
+            width: 90%;
+            text-align: center;
+		}
+    }
+    &__heading-text{
+        font-size: 24px;
+        @include v.mq(md){
+			font-size: max(16px, v.px2vw(24,768));
+		}
     }
 
     &__lead{
         text-align: center;
         margin-bottom: 80px;
+        @include v.mq(md){
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
     }
 
     &__heading2{
         text-align: center;
         margin-bottom: 40px;
+        @include v.mq(md){
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        a{
+            @include v.mq(md){
+                font-size: 10px;
+            }   
+        }
     }
 
     &__grid{
@@ -133,6 +162,9 @@ const { rutePath } = Astro.props;
         "g t" auto
         "g i" auto / 
         40% 60%;
+        @include v.mq(md){
+            display: block;
+        }
     }
 
     &__graph{
@@ -144,6 +176,9 @@ const { rutePath } = Astro.props;
     &__text{
         grid-area: t;
         margin-bottom: 2em;
+        @include v.mq(md){
+            font-size: 14px;
+        }
     }
     &__images{
         
@@ -173,6 +208,9 @@ const { rutePath } = Astro.props;
         left: 0;
         position: absolute;
         z-index: -1;
+        @include v.mq(md){
+            width: 100%;
+        }
     }
 
     &__text{
@@ -190,6 +228,14 @@ const { rutePath } = Astro.props;
             background-color: v.$gold;
             position: absolute;
             top: -50px;
+            transform: translate(-50%, -50%);
+        }
+        @include v.mq(xl){
+            padding-left: 0px;
+            padding-right:0px;
+        }
+        @include v.mq(md){
+            font-size: 14px;
         }
     }
 
