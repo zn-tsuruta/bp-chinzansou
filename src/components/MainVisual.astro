@@ -26,10 +26,10 @@ const { rutePath } = Astro.props;
 .main-visual{
     background-image: url(  v.$rutePath + '/img/main-visual-bg.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     min-height: 100vh;
     font-family: v.$mincho;
-    padding-top: 12vh;
+    padding-top: 15vh;
     max-width: 100%;
     @include v.mq(md){
         padding-top: 15vh;
@@ -47,9 +47,7 @@ const { rutePath } = Astro.props;
     }
     &__heading{
         @include v.main_width;
-        @include v.mq(lg){
-            width: 100%;        
-        }
+        max-width: 100%;
     }
     &__heading-text{
         padding: 20px;
