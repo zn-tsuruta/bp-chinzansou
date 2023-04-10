@@ -67,7 +67,7 @@ $mincho : "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "M
 }
 
 
-$rutePath : '/chinzansou';
+$rutePath : '..';
 
 /* width
 ================================================================================================= */
@@ -84,7 +84,6 @@ $main_width : 1280px;
 
 /* px から vw への変換
 ================================================================================================= */
-
 @function px2vw( $px , $width ) {
 	
 	@return calc( ( 1 / ($width / $px) ) * 100vw ) ;

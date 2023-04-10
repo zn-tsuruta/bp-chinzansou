@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro'
 import '../styles/reset.scss';
 import '../styles/common.scss';
 
-const rutePath = '/chinzansou';
+const rutePath = '.';
 
 ---
 
@@ -39,12 +39,35 @@ const rutePath = '/chinzansou';
 </Layout>
 
 
-<script>
-
-</script>
-
-
 <style lang="scss">
-
-
+@use '../styles/variables.scss' as v;
+.slider-sp{
+    @include v.mq(sm){
+        display: block;
+        .images__item{
+            // 左右に10pxのmargin
+            margin: 0 10px;
+            
+        }
+    }
+}
 </style>
+
+<script is:inline>
+$(function(){
+
+	// windowサイズが600px以下の場合
+	if (window.matchMedia('(max-width: 640px)').matches) {
+		// slick
+		$('.slider-sp').slick({
+			autoplay: true,
+			autoplaySpeed: 3000,
+			dots: true,
+			arrows: false,
+			speed: 1000,
+			
+		});
+	}
+
+});
+</script>

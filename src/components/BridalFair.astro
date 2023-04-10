@@ -6,7 +6,7 @@ const { rutePath } = Astro.props;
 <div class="wrapper">
     <div class="heading">
         <span class="heading__en">BRIDAL FAIR</span>
-        <h2 class="heading__jp">挙式が決まったらまずは<br class="mdbr">ブライダルフェアに参加してみましょう</h2>
+        <h2 class="heading__jp">結婚が決まったらまずは<br class="mdbr">ブライダルフェアに参加してみましょう</h2>
     </div>
 
     <div class="lead">
@@ -31,7 +31,7 @@ const { rutePath } = Astro.props;
             <div class="ratio__grid">
 
                 <div class="ratio__graph">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-graph.png" } alt="">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-graph.png.webp" } alt="">
                 </div>
 
                 <div class="ratio__text">
@@ -39,13 +39,13 @@ const { rutePath } = Astro.props;
                     <small class="ratio__text-small">*引用元：<a class="text-link" href="https://zexy.net/wedding/bridalfair/tasting/" target="_blank" rel="openner">ブライダルフェアの種類とメリットをご紹介！</a></small>
                 </div>
 
-                <div class="ratio__images">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-01.jpg" } alt="">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-02.jpg" } alt="">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-03.jpg" } alt="">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-04.jpg" } alt="">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-05.jpg" } alt="">
-                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-06.jpg" } alt="">
+                <div class="ratio__images slider-sp">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-11.jpg.webp" } alt="">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-12.jpg.webp" } alt="">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-13.jpg.webp" } alt="">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-14.jpg.webp" } alt="">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-15.jpg.webp" } alt="">
+                    <img class="ratio__images-img" src={ rutePath + "/img/bridalfair-16.jpg.webp" } alt="">
                 </div>
 
 
@@ -60,19 +60,16 @@ const { rutePath } = Astro.props;
 
     <div class="conclusion">
         <div class="conclusion__text">
-        <p>ブライダルフェアでは会場の確認もとても重要です。
-            ホームページやSNSなどでも会場の確認はできますが、実際の会場をご自身の目でご覧になることを
-            おすすめします。会場の雰囲気や料理など、五感で感じながらお試しください。
-            収容人数や天井の高さ、生演奏の有無、種類など、チェックしておきたいポイントは山ほど。
-            他にも化粧室までの距離が遠くないか、実際にゲストの席に座ってみて、
-            座り心地や隣の人との間隔などもお確かめください。
-            </p>
+        <p>ホームページやSNSなどでも会場の確認はできますが、<br class="mdbr">実際の会場をご自身の目で<br class="mdbr">ご覧になることをおすすめします。</p>
+        <p>会場の雰囲気や料理など、<br class="mdbr">チェックしておくべきポイントは山ほど。</p>
+        <p>実際にゲストの席に座ってみて、<br class="mdbr">座り心地や隣の人との間隔などもお確かめください。</p>
+        
         </div>
-        <div class="conclusion__images">
-            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-07.jpg" } alt="">
-            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-08.jpg" } alt="">
-            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-09.jpg" } alt="">
-            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-10.jpg" } alt="">
+        <div class="conclusion__images slider-sp">
+            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-07.jpg.webp" } alt="">
+            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-08.jpg.webp" } alt="">
+            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-09.jpg.webp" } alt="">
+            <img class="conclusion__images-img" src={ rutePath + "/img/bridalfair-10.jpg.webp" } alt="">
         </div>  
     </div>
 
@@ -104,7 +101,7 @@ const { rutePath } = Astro.props;
 }
 
 .ratio{
-    background-image: url( v.$rutePath + '/img/bridalfair-bg.jpg');
+    background-image: url( v.$rutePath + '/img/bridalfair-bg.jpg.webp');
     background-size: cover;
     background-position: center;
     &__inner{
@@ -201,9 +198,15 @@ const { rutePath } = Astro.props;
         grid-template-columns: 32% 32% 32%;
         grid-template-rows: auto auto;
         gap: 10px 2%;
+        @include v.mq(sm){
+            display: block;
+        }
     }
     &__images-img{
-
+        @include v.mq(sm){
+            // margin 10px を左右
+            margin: 0 10px;
+        }
     }
 
 }
@@ -235,15 +238,15 @@ const { rutePath } = Astro.props;
         padding-left: 200px;
         padding-right: 200px;
         position: relative;
-        &::before{
-            content: "";
-            width: 50px;
-            height: 2px;
-            background-color: v.$gold;
-            position: absolute;
-            top: -50px;
-            transform: translate(-50%, -50%);
-        }
+        // &::before{
+        //     content: "";
+        //     width: 50px;
+        //     height: 2px;
+        //     background-color: v.$gold;
+        //     position: absolute;
+        //     top: -50px;
+        //     transform: translate(-50%, -50%);
+        // }
         @include v.mq(xl){
             padding-left: 0px;
             padding-right:0px;
@@ -257,11 +260,19 @@ const { rutePath } = Astro.props;
         display: flex;
         @include v.main_width;
         justify-content: space-between;
+        @include v.mq(sm){
+            display: block;
+        }
     }
 
     &__images-img{
         width: 24%;
+        @include v.mq(sm){
+            width: 100%;
+            margin: 0 10px;
+        }
     }
+
 }
 
 
