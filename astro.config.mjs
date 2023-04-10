@@ -4,7 +4,7 @@ import relativeLinks from 'astro-relative-links';
 
 // https://astro.build/config
 export default defineConfig({
-  //base: '/chinzansou',
+  //base: '/chinzanso',
   outDir: './dist',
   integrations: [image(),relativeLinks()],
  // server:{ port:88, host: '192.168.193.87' }, // wifi
