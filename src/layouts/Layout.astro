@@ -12,12 +12,57 @@ const rutePath = '.';
 
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#  article: http://ogp.me/ns/article#">
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon"  href={ rutePath + "/favicon.ico"} />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="ホテル椿山荘東京では、結婚式・結婚式場を東京でご検討されているお二人のために四季折々の庭園とともに最高級のホテルウエディングをご提供します。レストランでのウエディングやフォトウエディング、結納など様々なご要望にお応えする結婚式場をご用意。東京で結婚式をされるならホテル椿山荘東京。"/>
 		<meta name="robots" content="noindex">
+
+		<!-- Google Tag Manager -->
+		<script type="text/javascript">
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-WSC5');
+		</script>
+		<!-- End Google Tag Manager -->
+
+		<!-- Facebook Pixel Code -->
+			<script type="text/javascript">
+				!function(f,b,e,v,n,t,s)
+				{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window, document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+				fbq('init', '298527534791092');
+				fbq('track', 'PageView');
+			</script>
+			<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=298527534791092&ev=PageView&noscript=1"/>
+			</noscript>
+		<!-- End Facebook Pixel Code -->
+
+		<!-- ▼20210204追加 -->
+		<!-- Facebook Pixel Code -->
+			<script type="text/javascript">
+				!function(f,b,e,v,n,t,s)
+				{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window, document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+				fbq('init', '346121626106025');
+				fbq('track', 'PageView');
+			</script>
+			<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=346121626106025&ev=PageView&noscript=1"/></noscript>
+		<!-- End Facebook Pixel Code -->
 		
 		<!-- jqueryのCDN -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,7 +71,18 @@ const rutePath = '.';
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 		<title>{title}</title>
-		
+
+		<!--202011 youtubeタグ　ここから-->
+		<!-- Global site tag (gtag.js) - Google Ads: 863320128 -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-863320128"></script>
+		<script type="text/javascript">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'AW-863320128');
+		</script>
+		<!--202011 youtubeタグ　ここまで-->
 	</head>
 	<body>
 		<slot />
